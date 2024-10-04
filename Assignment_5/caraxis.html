@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Car</title>
+    </head>
+
+    <body>
+       
+       
+      <div style="width:300px">
+        X-Axis : <input id="xaxis" /><br/><br/>
+        Y-Axis : <input id="yaxis" /><br/><br/>
+
+        <input type="button" value="Start" id="start" onclick="Start()" />
+        <input type="button" value="Stop" id="stop" onclick="Stop()" />
+    </div>
+    <div style="width:700px">
+        <hr />
+        <hr />
+        <img src="image.png" id="carimg" value="" />
+        
+        </div>
+        <script>
+            var counterX =0;
+            var counterY =0;
+            var IntervalID=null; 
+           var newArray= new Array();
+           
+           function Stop(){
+                for(var i=0;i<newArray.length;i++){
+                    var destroyArray=newArray[i];
+                    window.clearInterval(destroyArray);
+                }
+                   newArray=new Array();
+                   
+            }
+            function Start(){
+
+                IntervalID= window.setInterval(ExecuteMe,1000);
+
+                newArray.push(Xaxis);
+
+                //  var reftoXaxis = document.getElementById("xaxis");
+
+                //  reftoXaxis.value = newArray.toString();
+
+                
+                 
+    
+            }
+            function ExecuteMe(){
+               
+                var reftoimg=document.getElementById("carimg");
+
+               var reftoxaxis = document.getElementById("xaxis");
+               var reftoyaxis = document.getElementById("yaxis");
+
+
+               if(counterX<=400){
+                counterX=counterX+1;
+               reftoimg.style.marginLeft=counterX+"px";
+
+               reftoxaxis.value = counterX;
+               }
+               else{
+                
+                counterY=counterY+1;
+                reftoimg.style.marginTop=counterY+"px";
+                reftoyaxis.value=counterY;
+                  if(counterY==100){
+                    Stop();
+                    }
+               }
+       
+            }
+           
+        </script>
+    </body>
+</html>

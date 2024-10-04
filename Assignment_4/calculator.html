@@ -1,0 +1,60 @@
+<html>
+    <head><title>Calculator</title></head>
+
+    <body>
+        <center>
+        <h1><ul>Calculator</ul></h1>
+        <br>
+         
+        Enter Number 1  : <input type="number" id="num1" /><br /><br />
+        Enter Number 2 :  <input type="number" id="num2" /><br /><br />
+        Result &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp &nbsp  &nbsp : <input id="result"/><br/><br/>
+
+        <input type="button" value="Addition" onclick="Add()"/>
+        <input type="button" value="Subtraction" onclick="Sub()" />
+        <input type="button" value="Multiplication" onclick="Mul()" />
+        <input type="button" value="Division" onclick="Div()"/>
+
+        </center>
+
+
+
+        <script>
+                function Add(){
+                    var add=document.getElementById("num1");
+                    var ad1=document.getElementById("num2");
+
+                    var reftoresult=document.getElementById("result");
+                    reftoresult.value=parseInt(add.value)+parseInt(ad1.value);
+                }
+
+                function Sub(){
+                    var refnum1=document.getElementById("num1");
+                    var refnum2=document.getElementById("num2");
+
+                    var reftoresultsub=document.getElementById("result");
+
+                    reftoresultsub.value=parseInt(refnum1.value)-parseInt(refnum2.value);
+                }
+
+                function Mul(){
+                    var reftonum1=document.getElementById("num1");
+                    var reftonum2=document.getElementById("num2");
+                    var reftoresult=document.getElementById("result");
+
+                    reftoresult.value=parseInt(reftonum1.value)*parseInt(reftonum2.value);
+                }
+
+                function Div(){
+                    var reftonum1=document.getElementById("num1");
+                    var reftonum2=document.getElementById("num2");
+                    var reftoresult=document.getElementById("result");
+                    reftoresult.value=parseInt(reftonum1.value)/parseInt(reftonum2.value);
+
+                }
+
+        </script>
+    </body>
+
+
+</html>
